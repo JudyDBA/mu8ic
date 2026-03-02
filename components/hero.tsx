@@ -35,6 +35,7 @@ interface MinimalistHeroProps {
   navLinks: { label: string; href: string }[];
   mainText: string;
   readMoreLink: string;
+  getStartedHref?: string;
   imageSrc: string;
   imageAlt: string;
   overlayText: {
@@ -66,6 +67,7 @@ export const MinimalistHero = ({
   navLinks,
   mainText,
   readMoreLink,
+  getStartedHref = '/workspace',
   imageSrc,
   imageAlt,
   overlayText,
@@ -107,7 +109,7 @@ export const MinimalistHero = ({
           className="flex items-center gap-3"
         >
           <a
-            href="#features"
+            href={getStartedHref}
             className="hidden md:inline-flex items-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background transition-opacity hover:opacity-80"
           >
             Get Started
@@ -134,7 +136,7 @@ export const MinimalistHero = ({
         >
           <p className="mx-auto max-w-xs text-sm leading-relaxed text-foreground/80 md:mx-0">{mainText}</p>
           <a
-            href={readMoreLink}
+            href={getStartedHref}
             className="mt-4 inline-flex items-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-80"
           >
             Get Started
